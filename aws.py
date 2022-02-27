@@ -29,3 +29,4 @@ s3client.upload_file(
 
 
 # Create S3 metadata table for athena query.
+athena_client = sess.client("athena")

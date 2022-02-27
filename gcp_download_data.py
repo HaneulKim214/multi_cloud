@@ -16,14 +16,14 @@ q = """
 """
 project_id = 'festive-folio-342512'
 df = client.query(q, project=project_id).to_dataframe()
-df.to_parquet("data/tmdb_ratins.parquet")
+df.to_parquet("data/tmdb_ratins2.parquet")
 
 # 각 DB의 테이블들을 전부 한번의 코드로 옮기기 위함.
-for db,table_lst in DB_TABLELIST_DICT.items():
-    for table in table_lst:
-        q = f"""SELECT * FROM {db}.{table}"""
-        df = client.query(q, project=project_id).to_dataframe()
-        # save to local
-        df.to_parquet(f"data/{db}/{table}.parquet")
-
+# for db,table_lst in DB_TABLELIST_DICT.items():
+#     for table in table_lst:
+#         q = f"""SELECT * FROM {db}.{table}"""
+#         df = client.query(q, project=project_id).to_dataframe()
+#         # save to local
+#         df.to_parquet(f"data/{db}/{table}.parquet")
+#
 
